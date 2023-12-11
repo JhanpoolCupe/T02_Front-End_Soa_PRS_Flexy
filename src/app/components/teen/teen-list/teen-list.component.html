@@ -1,0 +1,96 @@
+<div class="cabecera">
+    <h1 class="titulo">Adolescente</h1>
+  </div>
+  
+  <button (click)="openDialog()" mat-raised-button color="primary">
+    <mat-icon aria-hidden="false" aria-label="add_circle_outline" fontIcon="add_circle_outline"></mat-icon>
+    Nueva Adolescente
+  </button>
+  <br>
+  <br>
+  <div class="filtro-container">
+    <label for="filtroEstado">Filtrar por estado:</label>
+    <div class="custom-select">
+      <select id="filtroEstado" [(ngModel)]="estadoFiltrado" (change)="listar()">
+        <option value="Todos">Todos</option>
+        <option value="A">Activo</option>
+        <option value="I">Inactivo</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  <mat-card class="w-100">
+    <mat-card-content>
+      <h4>Listado de adolescente</h4>
+      <br>
+  <table class="table centered-table" >
+    <thead>
+      <tr>
+        <th scope="col" class="table-cell">Nombre</th>
+        <th scope="col" class="table-cell">Apellido paterno</th>
+        <th scope="col" class="table-cell">Apellido materno</th>
+        <th scope="col" class="table-cell">Tipo de documento</th>
+        <th scope="col" class="table-cell">Numero de documento</th>
+        <th scope="col" class="table-cell">Fecha de nacimiento</th>
+        <th scope="col" class="table-cell">Celular</th>
+        <th scope="col" class="table-cell">Dirrecion</th>
+        <th scope="col" class="table-cell">genero</th>
+        <th scope="col" class="table-cell">crime</th>
+        <th scope="col" class="table-cell">Apoderado</th>
+        <th scope="col" class="table-cell">documento</th>
+        <th scope="col" class="table-cell">ACCIÓN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="dataSource.length; else noData">
+        <tr *ngFor="let adolescentes of dataSource; let odd = odd" [ngClass]="{ 'bg-gray-100': odd, 'bg-gray-200': !odd }">
+        <td class="table-cell">{{adolescentes.name}}</td>
+        <td class="table-cell">{{adolescentes.father_surname}}</td>
+        <td class="table-cell">{{adolescentes.mother_surname}}</td>
+        <td class="table-cell">{{adolescentes.document_type}}</td>
+        <td class="table-cell">{{adolescentes.document_number}}</td>
+        <td class="table-cell">{{adolescentes.birthdate | date: 'dd/MMM/yyyy'}}</td>
+        <td class="table-cell">{{adolescentes.cell_phone}}</td>
+        <td class="table-cell">{{adolescentes.address}}</td>
+        <td class="table-cell">{{adolescentes.gender}}</td>
+        <td class="table-cell">{{adolescentes.crime_committed}}</td>
+        <td class="table-cell">{{adolescentes.attorney}}</td>
+        <td>
+          <button class="btn btn-secondary rounded-pill" (click)="openDocumentoModal(adolescentes.document_number)" style="background-color: rgb(50, 207, 207);">
+            Ver Documento
+          </button>
+        </td>
+        <td>
+          <div class="button-container">
+            <ng-container *ngIf="adolescentes.state === 'I'">
+              <button class="button action-button btn-activate" mat-fab color="primary" aria-label="Activar" (click)="activarAdolescente(adolescentes.id)">
+                <mat-icon>check</mat-icon>
+              </button>
+            </ng-container>
+            <ng-container *ngIf="adolescentes.state !== 'I'">
+              <button class="button action-button btn-edit" mat-fab color="primary" aria-label="Editar" (click)="editarTeen(adolescentes)">
+                <mat-icon>mode_edit</mat-icon>
+              </button>
+              <button class="button action-button btn-delete" mat-fab color="warn" aria-label="Eliminar" (click)="deleteTeen(adolescentes.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </ng-container>
+          </div>
+        </td>      
+      </tr>
+    </ng-container>
+    <ng-template #noData>
+      <br>
+      <tr>
+        <td colspan="15" class="text-center py-4 text-gray-500">
+          No hay datos disponibles.
+        </td>
+      </tr>
+    </ng-template>
+    </tbody>
+  </table>
+
+</mat-card-content>
+</mat-card>

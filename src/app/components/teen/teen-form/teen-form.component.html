@@ -1,0 +1,79 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<div class="app-container">
+    <div class="blur-background">
+      <div class="cabecera-modalRegistro">
+          <h1>{{teenService.adolescenteSelected ? 'EDITAR REGISTRO' : 'NUEVO REGISTRO'}}</h1>
+      </div>
+      <div class="formulario p-4 bg-light rounded">
+          <form [formGroup]="adolescenteForm" class="needs-validation" novalidate>
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label for="campo1">NOMBRE:</label>
+                      <input formControlName="name" type="text" class="form-control" placeholder="Ingrese el nombre" id="campo1" [class.is-invalid]="nombre">
+                      <div *ngIf="nombre" class="invalid-feedback">Ingrese solo letras</div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo2">Apellido p:</label>
+                      <input formControlName="father_surname" type="text" class="form-control" id="campo2" [class.is-invalid]="father_surname">
+                      <div *ngIf="father_surname" class="invalid-feedback">Ingrese solo letras</div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo3">Apellido M:</label>
+                      <input formControlName="mother_surname" type="text" class="form-control" id="campo3" [class.is-invalid]="mother_surname">
+                      <div *ngIf="mother_surname" class="invalid-feedback">Ingrese solo letras</div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo4">Tipo de documento</label>
+                      <select formControlName="document_type" class="form-control" id="campo4">
+                          <option value="DNI">DNI</option>
+                          <option value="CNE">CNE</option>
+                      </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo5">Número de documento</label>
+                      <input formControlName="document_number" type="text" class="form-control" id="campo5">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo6">Cumpleaños</label>
+                      <input formControlName="birthdate" type="date" class="form-control" id="campo6">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo7">Celular</label>
+                      <input formControlName="cell_phone" type="text" class="form-control" id="campo7" [class.is-invalid]="celular" maxlength="9">
+                      <small *ngIf="celular" class="text-danger">Ingrese solo número</small>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo8">Dirección</label>
+                      <input formControlName="address" type="text" class="form-control" id="campo8" [class.is-invalid]="address">
+                      <small *ngIf="address" class="text-danger"></small>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo9">Género</label>
+                      <select formControlName="gender" class="form-control" id="campo9">
+                          <option value="M">Hombre</option>
+                          <option value="F">Mujer</option>
+                      </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo10">Delito cometido</label>
+                      <input formControlName="crime_committed" type="text" class="form-control" id="campo10" [class.is-invalid]="crime_committed">
+                      <div *ngIf="crime_committed" class="invalid-feedback">Ingrese solo texto</div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="campo11">Abogado</label>
+                      <input formControlName="attorney" type="text" class="form-control" id="campo11" [class.is-invalid]="attorney">
+                      <div *ngIf="attorney" class="invalid-feedback">Ingrese solo texto</div>
+                  </div>
+              </div>
+              <div class="mt-3 text-center">
+        <button type="submit" (click)="saveAdolescente()" class="btn btn-custom custom-margin">
+            {{teenService.adolescenteSelected ? 'ACTUALIZAR' : 'GUARDAR'}}
+        </button>
+        <button (click)="onClose()" class="btn btn-outline-custom">CERRAR</button>
+    </div>
+          </form>
+      </div>
+    </div>
+    </div>

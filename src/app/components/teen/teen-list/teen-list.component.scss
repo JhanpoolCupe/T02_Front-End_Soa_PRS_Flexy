@@ -1,0 +1,140 @@
+.cabecera {
+  color: black;
+  text-align: center;
+  align-items: center;
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+.titulo{
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-size:30px;
+}
+
+  .btn-nueva-entidad {
+    display: block;
+    background-color: #0e049b; /* Puedes cambiar este color si lo deseas */
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-nueva-entidad:hover {
+    background-color: #0e0035;
+  }
+  
+  
+  .filtro-select {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid #4CAF50;
+    outline: none;
+    color: #333;
+  }
+  
+  .filtro-select:focus {
+    border-color: #45a049;
+  }
+  
+
+  /* Estilos para botones de acción (editar, eliminar, etc.) */
+.action-button {
+    background-color: #b3e0ff; /* Color celeste bebé */
+    color: #333;
+    border: none;
+    border-radius: 50%; /* Botones circulares */
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  
+  
+
+  .btn-activate {
+    background-color: #4CAF50; /* Color verde */
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .btn-activate:hover {
+    background-color: #45a049; /* Un verde un poco más oscuro al hacer hover */
+  }
+
+
+
+  .btn-delete{
+    background-color: #740404; /* Color verde */
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .btn-delete:hover {
+    background-color: #e90505; /* Un verde un poco más oscuro al hacer hover */
+  }
+
+  .btn-edit{
+    background-color: #050792; /* Color verde */
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .btn-edit:hover {
+    background-color: #010230; /* Un verde un poco más oscuro al hacer hover */
+  }
+
+
+  .filtro-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el label y el select */
+}
+
+.filtro-container label {
+    font-weight: 500; /* Hacer el texto un poco más grueso */
+}
+
+.custom-select {
+    position: relative;
+    width: 200px; /* Puedes ajustar este valor según tus necesidades */
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 25px;
+    appearance: none; /* Eliminar el diseño por defecto en algunos navegadores */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.custom-select:hover select {
+    border-color: #4a90e2;
+}
+
+/* Personalizar la flecha del select */
+.custom-select:after {
+    content: '\25BC'; /* Flecha hacia abajo */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Para asegurarnos de que no interfiera con el select */
+    color: #4a90e2;
+}
+
+.centered-table {
+  width: 100%;
+  margin: 0 auto; /* Para centrar la tabla horizontalmente */
+}
+
+.table-cell {
+  padding: 10px; /* Ajusta el valor según la cantidad de espacio deseada */
+}

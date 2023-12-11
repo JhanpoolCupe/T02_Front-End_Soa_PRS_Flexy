@@ -1,0 +1,88 @@
+<style>
+    .modal-header {
+      background-color: blue;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+    }
+  
+    .modal-title {
+      margin: 0;
+    }
+  
+    .btn-close-white {
+      color: white;
+    }
+  
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+  
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .search-input {
+      border: 1px solid #8c8c8c; /* Borde plomo */
+      border-radius: 5px;
+      padding: 8px;
+      width: 500px;
+    }
+  
+    .search-button {
+      background-color: blue; /* Azul */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  
+    .search-button:hover {
+      background-color: #010d60; /* Azul más oscuro al pasar el ratón */
+    }
+  </style>
+  <div class="modal-header">
+    <h4 class="modal-title text-white">DOCUMENTOS DEL ADOLESCENTE</h4>
+    <button type="button" class="btn-close btn-close-white" (click)="cerrarModal()"></button>
+  </div>
+  <div class="container">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Buscar...">
+      <button class="search-button">Buscar</button>
+    </div>
+  </div>
+  
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">TIPO</th>
+      <th scope="col">FLAG</th>
+      <th scope="col">DNI</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">DOCUMENTO</th>
+      <th scope="col">FECHA</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{item.id}}</td>
+      <td>{{item.tipo}}</td>
+      <td>{{item.flag}}</td>
+      <td>{{item.dni}}</td>
+      <td>{{item.name}}</td>
+      <a [href]="item.url" target="_blank">{{getLinkDisplayName(item.tipo)}}</a>
+      <td>{{item.date}}</td>
+    </tr>
+  
+    </tbody>
+  </table>
+  
+  

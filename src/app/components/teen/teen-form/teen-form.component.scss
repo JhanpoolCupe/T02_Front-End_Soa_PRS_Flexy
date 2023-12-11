@@ -1,0 +1,72 @@
+/* Estilo global para la página */
+body {
+    font-family: 'Poppins', sans-serif; /* Cambia la fuente para toda la página */
+    margin: 0;
+    padding: 0;
+}
+
+.cabecera-modalRegistro{
+    background-color: #40c2d3;
+    text-align: center;
+}
+
+/* Estilos para el encabezado */
+.cabecera-modalRegistro h1 {
+    color: #ffffff;
+    display: inline-block;
+    padding-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+.formulario {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Estilos para los campos de entrada de texto */
+.form-control {
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los campos de entrada */
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+/* Estilo para los botones */
+.btn-custom, .btn-outline-custom {
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins a los botones */
+}
+
+.btn-custom:hover {
+    background-color: #357ab7;
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline-custom:hover {
+    background-color: #4a90e2;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}

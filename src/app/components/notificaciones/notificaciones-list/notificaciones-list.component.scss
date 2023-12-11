@@ -1,0 +1,29 @@
+.cabecera {
+    color: black;
+    text-align: center;
+    align-items: center;
+    font-family: 'Mochiy Pop P One', sans-serif;
+  }
+  .titulo{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size:30px;
+  }
+  .button-container {
+    display: flex; /* Usa un contenedor flexible para alinear los botones uno al lado del otro */
+    text-align: center;
+  }
+  .button{
+    margin-right:5px;
+  }
+  td {
+    vertical-align: middle;
+  }
+  
+  .centered-table {
+    width: 100%;
+    margin: 0 auto; /* Para centrar la tabla horizontalmente */
+  }
+  
+  .table-cell {
+    padding: 10px; /* Ajusta el valor según la cantidad de espacio deseada */
+  }
